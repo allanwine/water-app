@@ -1,0 +1,66 @@
+<div class="container d-flex align-items-center justify-content-center">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="text-center">
+          <h1>Crie uma Conta</h1>
+          <h6>Por favor, insira seus dados</h6>
+        </div>
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+          <div class="mb-3">
+            <label for="nameInput" class="form-label">Nome</label>
+            <input type="text" class="form-control" id="nameInput" formControlName="name">
+            <span
+              *ngIf = "registerForm.get('name')?.errors &&
+                registerForm.get('name')?.touched"
+            >
+              Insira seu nome, por favor
+            </span>
+          </div>
+          <div class="mb-3">
+            <label for="phoneInput" class="form-label">Telefone</label>
+            <input type="number" class="form-control" id="phoneInput" placeholder="(00)12345-6789" formControlName="phone">
+            <span
+              *ngIf = "registerForm.get('phone')?.errors &&
+                registerForm.get('phone')?.touched"
+            >
+              Insira um telefone válido, por favor
+            </span>
+          </div>
+          <div class="mb-3">
+            <label for="emailInput" class="form-label">E-mail</label>
+            <input type="email" class="form-control" id="emailInput" formControlName="email">
+            <span
+              *ngIf = "registerForm.get('email')?.errors &&
+                registerForm.get('email')?.touched"
+            >
+              Insira um e-mail válido, por favor
+            </span>
+          </div>
+          <div class="mb-3">
+            <label for="passwordInput" class="form-label">Senha</label>
+            <input type="password" class="form-control" id="passwordInput" formControlName="password">
+            <span
+              *ngIf = "registerForm.get('password')?.errors &&
+                registerForm.get('password')?.touched"
+            >
+              A senha deve conter pelo menos 6 caracteres
+            </span>
+          </div>
+          <div class="mb-3">
+            <label for="confirmPasswordInput" class="form-label">Confirme a Senha</label>
+            <input type="password" class="form-control" id="confirmPasswordInput" formControlName="confirmPassword">
+            <span
+              *ngIf = "registerForm.get('confirmPassword')?.errors &&
+                registerForm.get('confirmPassword')?.touched"
+            >
+              A senha deve conter pelo menos 6 caracteres
+            </span>
+          </div>
+          <button type="submit" class="btn btn-primary" [disabled]="!registerForm.valid">Criar Conta</button>
+        </form>
+        <a routerLink="/login">Já tem uma conta? Clique aqui para entrar</a>
+      </div>
+    </div>
+  </div>
+</div>

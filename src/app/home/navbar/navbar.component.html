@@ -1,0 +1,27 @@
+<nav class="navbar navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <fa-icon [icon]="['fas', 'glass-water']"></fa-icon>
+      Water Tracker
+    </a>
+    <button
+      class="nav-item navbar-toggler"
+      type="button "
+      data-bs-toggle="dropdown"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+      <li><a class="dropdown-item" href="#">Opções</a></li>
+      <li>
+        <hr class="dropdown-divider">
+      </li>
+      <li><a class="dropdown-item" href="#" (click)="onLogout()">Sair</a></li>
+    </ul>
+
+  </div>
+</nav>

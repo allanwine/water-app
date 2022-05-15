@@ -1,0 +1,29 @@
+.container {
+  height: 100vh;
+}
+
+.card {
+  border: none;
+  width: 500px;
+  padding: 40px;
+  // position: absolute;
+  // top: 50%;
+  // left: 50%;
+  // transform: translate(-50%, -50%);
+  background: #00BFFF;
+  background: linear-gradient(to bottom, #00BFFF, #87CEFA);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+a {
+  margin-top: 10px;
+}
+
+input.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
+
+span {
+  color: darkred;
+}
+
