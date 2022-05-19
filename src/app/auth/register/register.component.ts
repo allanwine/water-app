@@ -24,11 +24,13 @@ export class RegisterComponent implements OnInit {
     ]),
     height: new FormControl('', [
       Validators.required,
-      Validators.minLength(2)
+      Validators.minLength(2),
+      Validators.maxLength(3)
     ]),
     weight: new FormControl('', [
       Validators.required,
-      Validators.minLength(2)
+      Validators.minLength(2),
+      Validators.maxLength(3)
     ]),
     password: new FormControl('', [
       Validators.required,

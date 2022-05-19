@@ -10,7 +10,7 @@ export class DashboardComponent implements OnInit {
 
   goal: number = 2000;
   percentage: number = 0;
-  remained: number = 0;
+  remained: number = 2000;
   numberOfCups: number = 8;
   fullCups: number = 0;
   cups: cup[] = [];

@@ -38,23 +38,23 @@
             </span>
           </div>
           <div class="mb-3">
-            <label for="heightInput" class="form-label">Altura</label>
+            <label for="heightInput" class="form-label">Altura (cm)</label>
             <input type="number" class="form-control" id="heightInput" formControlName="height">
             <span
               *ngIf = "registerForm.get('height')?.errors &&
                 registerForm.get('height')?.touched"
             >
-              Insira sua altura em cm sem vírgula, por favor
+              Insira sua altura, por favor
             </span>
           </div>
           <div class="mb-3">
-            <label for="weightInput" class="form-label">Peso</label>
+            <label for="weightInput" class="form-label">Peso (kg)</label>
             <input type="number" class="form-control" id="weightInput" formControlName="weight">
             <span
               *ngIf = "registerForm.get('weight')?.errors &&
                 registerForm.get('weight')?.touched"
             >
-              Insira seu peso em kg, por favor
+              Insira seu peso, por favor
             </span>
           </div>
           <div class="mb-3">

@@ -19,16 +19,15 @@
                 </li>
                 <li>
                   <label for="cupRange" class="form-label">Número de copos: {{ numberOfCups }}</label>
-                  <input type="range" class="form-range" min="1" max="35" step="1" id="cupRange" [(ngModel)]="numberOfCups" (change)='updateSettings()'>
+                  <input type="range" class="form-range" min="1" max="20" step="1" id="cupRange" [(ngModel)]="numberOfCups" (change)='updateSettings()'>
                 </li>
               </ul>
             </div>
           </div>
 
           <div class="sugestion">
-            <h6 class="me-3">Com base no seu peso,
-            <br/>sugere-se tomar: 2500 ml
-            <br/>(35ml por kg)</h6>
+            <h6>O objetivo sugerido com base no seu peso é:</h6>
+            <span class="goal-suggestion">2500 ml (35ml por kg)</span>
           </div>
 
           <div class="cup">
