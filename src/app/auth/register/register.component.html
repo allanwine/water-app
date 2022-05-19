@@ -18,7 +18,17 @@
             </span>
           </div>
           <div class="mb-3">
-            <label for="phoneInput" class="form-label">Telefone</label>
+            <label for="emailInput" class="form-label">E-mail</label>
+            <input type="email" class="form-control" id="emailInput" formControlName="email">
+            <span
+              *ngIf = "registerForm.get('email')?.errors &&
+                registerForm.get('email')?.touched"
+            >
+              Insira um e-mail válido, por favor
+            </span>
+          </div>
+          <div class="mb-3">
+            <label for="phoneInput" class="form-label">Celular</label>
             <input type="number" class="form-control" id="phoneInput" placeholder="(00)12345-6789" formControlName="phone">
             <span
               *ngIf = "registerForm.get('phone')?.errors &&
@@ -28,13 +38,23 @@
             </span>
           </div>
           <div class="mb-3">
-            <label for="emailInput" class="form-label">E-mail</label>
-            <input type="email" class="form-control" id="emailInput" formControlName="email">
+            <label for="heightInput" class="form-label">Altura</label>
+            <input type="number" class="form-control" id="heightInput" formControlName="height">
             <span
-              *ngIf = "registerForm.get('email')?.errors &&
-                registerForm.get('email')?.touched"
+              *ngIf = "registerForm.get('height')?.errors &&
+                registerForm.get('height')?.touched"
             >
-              Insira um e-mail válido, por favor
+              Insira sua altura em cm sem vírgula, por favor
+            </span>
+          </div>
+          <div class="mb-3">
+            <label for="weightInput" class="form-label">Peso</label>
+            <input type="number" class="form-control" id="weightInput" formControlName="weight">
+            <span
+              *ngIf = "registerForm.get('weight')?.errors &&
+                registerForm.get('weight')?.touched"
+            >
+              Insira seu peso em kg, por favor
             </span>
           </div>
           <div class="mb-3">

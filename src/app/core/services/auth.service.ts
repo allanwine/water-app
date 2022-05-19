@@ -10,6 +10,8 @@ export class AuthService {
   authorizedUsers = [
     {
       email: 'test@test.com',
+      height: 175,
+      weight: 85,
       password: '123456',
     }
   ];
@@ -30,9 +32,11 @@ export class AuthService {
     };
   };
 
-  registerUser(email: string, password: string): Observable<{ error: string }> | Observable<{}> {
+  registerUser(email: string, height: number, weight: number, password: string): Observable<{ error: string }> | Observable<{}> {
     this.authorizedUsers.push({
       email,
+      height,
+      weight,
       password
     });
     this.router.navigate(['/login']);

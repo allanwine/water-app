@@ -15,14 +15,20 @@
               <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                 <li>
                   <label for="goalRange" class="form-label">Objetivo: {{ goal }}ml</label>
-                  <input type="range" class="form-range" min="500" max="4000" step="250" id="goalRange" [(ngModel)]="goal" (change)='updateSettings()'>
+                  <input type="range" class="form-range" min="500" max="7000" step="250" id="goalRange" [(ngModel)]="goal" (change)='updateSettings()'>
                 </li>
                 <li>
                   <label for="cupRange" class="form-label">Número de copos: {{ numberOfCups }}</label>
-                  <input type="range" class="form-range" min="1" max="12" step="1" id="cupRange" [(ngModel)]="numberOfCups" (change)='updateSettings()'>
+                  <input type="range" class="form-range" min="1" max="35" step="1" id="cupRange" [(ngModel)]="numberOfCups" (change)='updateSettings()'>
                 </li>
               </ul>
             </div>
+          </div>
+
+          <div class="sugestion">
+            <h6 class="me-3">Com base no seu peso,
+            <br/>sugere-se tomar: 2500 ml
+            <br/>(35ml por kg)</h6>
           </div>
 
           <div class="cup">
