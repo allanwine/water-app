@@ -2,6 +2,16 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.0.
 
+## First steps
+
+Run `npm i` to install the dependencies.
+This project was made using angular, that requires Node.js and Node Packet Manager (NPM)
+You can check the version installed using the command in terminal: node -v; npm -v
+Once both are installed you can proceed installing the Angular CLI with the command: npm install -g @angular/cli
+On windows you might need the command: Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
+(Make sure to read the message displayed and that you understant the implications of setting an execution policy)
+Least you can start the project using the command: ng serve
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.

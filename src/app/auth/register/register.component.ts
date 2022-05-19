@@ -11,26 +11,43 @@ export class RegisterComponent implements OnInit {
 
   error: string = '';
   registerForm: FormGroup = new FormGroup({
-    name: new FormControl('', [Validators.required]),
+    name: new FormControl('', [
+      Validators.required
+    ]),
+    email: new FormControl('', [
+      Validators.required,
+      Validators.email
+    ]),
     phone: new FormControl('', [
       Validators.required,
       Validators.pattern('^[0-9]{11}$')
     ]),
-    email: new FormControl('', [Validators.required, Validators.email]),
-    password: new FormControl('', [
-      Validators.minLength(6),
+    height: new FormControl('', [
       Validators.required,
+      Validators.minLength(2)
+    ]),
+    weight: new FormControl('', [
+      Validators.required,
+      Validators.minLength(2)
+    ]),
+    password: new FormControl('', [
+      Validators.required,
+      Validators.minLength(6)
     ]),
     confirmPassword: new FormControl('', [
-      Validators.minLength(6),
       Validators.required,
+      Validators.minLength(6)
     ])
   });
 
   constructor(private authService: AuthService) { }
 
   onSubmit() {
-    this.authService.registerUser(this.registerForm.value.email, this.registerForm.value.password).subscribe(
+    this.authService.registerUser(
+      this.registerForm.value.email,
+      this.registerForm.value.height,
+      this.registerForm.value.weight,
+      this.registerForm.value.password).subscribe(
       (resData: any) => {
         if (resData.error) {
           this.error = resData.error;
