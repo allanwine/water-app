@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { cup } from 'src/app/core/models/models';
+import { AuthService } from 'src/app/core/services/auth.service';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
+
 export class DashboardComponent implements OnInit {
 
   goal: number = 2000;
@@ -16,9 +18,10 @@ export class DashboardComponent implements OnInit {
   cups: cup[] = [];
   percentageHeight: string = '0px';
 
-  constructor() { }
+  constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
+    this.goal = this.calculateSuggestion();
     this.cups = this.createCups();
   }
 
@@ -40,6 +43,12 @@ export class DashboardComponent implements OnInit {
       });
     }
     return cups;
+  }
+
+  calculateSuggestion() {
+    this.goal = this.authService.getUserWeight() * 35;
+    this.remained = this.goal;
+    return this.goal, this.remained;
   }
 
   updateRemained() {

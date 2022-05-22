@@ -16,6 +16,7 @@ export class AuthService {
     }
   ];
 
+  loggedUser: {email: string; height: number; weight: number; password: string; } | undefined;
   isAuthenticated: boolean = false;
 
   constructor(private router: Router) { }
@@ -23,6 +24,7 @@ export class AuthService {
   login(email: string, password: string): Observable<{ error: string }> | Observable<{}> {
     if (this.checkEmailAndPassword(email, password)) {
       this.isAuthenticated = true;
+      this.loggedUser = this.authorizedUsers.find(user => user.email === email);
       this.navigateToDashboard();
       return of();
     } else {
@@ -50,6 +52,10 @@ export class AuthService {
   logout() {
     this.isAuthenticated = false;
     this.router.navigate(['/login']);
+  }
+
+  getUserWeight(): number {
+    return this.loggedUser!.weight;
   }
 
   navigateToDashboard(): void {
