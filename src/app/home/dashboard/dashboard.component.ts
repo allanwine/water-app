@@ -21,7 +21,7 @@ export class DashboardComponent implements OnInit {
   constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
-    this.goal = this.calculateSuggestion();
+    this.remained = this.calculateSuggestion();
     this.cups = this.createCups();
   }
 
@@ -47,8 +47,7 @@ export class DashboardComponent implements OnInit {
 
   calculateSuggestion() {
     this.goal = this.authService.getUserWeight() * 35;
-    this.remained = this.goal;
-    return this.goal, this.remained;
+    return this.goal;
   }
 
   updateRemained() {
