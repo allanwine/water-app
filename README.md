@@ -16,8 +16,7 @@ Primeiramente você deve, no vscode, instalar as dependências do projeto, utili
 
 ## Explanação do projeto (vídeo)
 
-O vídeo demonstra o uso da aplicação de duas formas:
-<br>Com um usuário de testes já presente na aplicação, e com a criação de um usuário distinto.
+O vídeo demonstra o uso da aplicação de duas formas:Com um usuário de testes já presente na aplicação, e com a criação de um usuário distinto.
 <br>O usuário de testes pode ser logado com o email test@test.com e a senha 123456.
-<br>Como o peso do usuário padrão é de 85kg, ao logar o sistema já é sugerido o consumo de água com base neste peso, sendo de 2975ml.
+<br>Como o peso do usuário padrão é de 85kg, ao logar no sistema já é sugerido o consumo de água com base neste peso, sendo de 2975ml.
 <br>Com a criação de um usuário distinto, utilizando um peso fictício, quando logado é sugerido o consumo de água com base no peso do usuário.
