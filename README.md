@@ -1,37 +1,23 @@
 # WaterApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.0.
+## Como rodar a aplicação
 
-## First steps
+Primeiramente você deve, no vscode, instalar as dependências do projeto, utilizando comando `npm i`.
+<br> Este projeto foi feito utilizando o framework [Angular](https://angular.io/).
+<br> Ele requere as versões atualizadas do NodeJS e do Node Packet Manager (NPM).
+<br> Você pode verificar se tem as versões instaladas utilizando o comando no terminal: `node -v` e `npm -v`.
+<br> Se os dois estiverem instalados, você pode proceder com a instalação do Angular CLI com o comando: `npm i -g @angular/cli`.
+<br>
+<br> Caso esteja rodando a aplicação no windows, talvez seja necessário executar o comando no terminal:
+<br> `Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned`
+<br> (Tenha certeza de ler as mensagens exibidas e que você entende as implicações de setar uma execution policy)
+<br> Por fim, você pode iniciar a aplicação usando o comando: `ng serve`
+<br> Navegue até `http://localhost:4200/`.
 
-Run `npm i` to install the dependencies.
-This project was made using angular, that requires Node.js and Node Packet Manager (NPM)
-You can check the version installed using the command in terminal: node -v; npm -v
-Once both are installed you can proceed installing the Angular CLI with the command: npm install -g @angular/cli
-On windows you might need the command: Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
-(Make sure to read the message displayed and that you understant the implications of setting an execution policy)
-Least you can start the project using the command: ng serve
+## Explanação do projeto (vídeo)
 
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+O vídeo demonstra o uso da aplicação de duas formas:
+<br>Com um usuário de testes já presente na aplicação, e com a criação de um usuário distinto.
+<br>O usuário de testes pode ser logado com o email test@test.com e a senha 123456.
+<br>Como o peso do usuário padrão é de 85kg, ao logar o sistema já é sugerido o consumo de água com base neste peso, sendo de 2975ml.
+<br>Com a criação de um usuário distinto, utilizando um peso fictício, quando logado é sugerido o consumo de água com base no peso do usuário.
