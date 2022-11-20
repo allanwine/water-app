@@ -1,77 +1,81 @@
-
 <div class="container">
   <div class="content first-content">
-      <div class="first-column">
-          <h2 class="title title-primary">Bem-vindo</h2>
-            <p class="description description-primary">Faça seu login e comece a usar!</p>                                
-      </div>    
-      
-      <div class="second-column"> 
-          <div class="card">
-            <div class="text-center">
-              <h1 class="description description-second">Entrar</h1>
-              <h6 class="description description-second">Por favor, insira seu e-mail e senha</h6>
-              <span
-                class="help-block"
-                *ngIf = "error"
-              >
-                {{ error }}
-              </span>
-            </div>
-            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-              <div class="mb-3">
-                <label
-                  for="emailInput"
-                  class="form-label description description-second"
-                >
-                  E-mail
-                </label>
-                <input
-                  type="email"
-                  class="form-control description description-second"
-                  id="emailInput"
-                  formControlName="email"
-                >
-                <span
-                  class="help-block description description-second"
-                  *ngIf="!loginForm.get('email')?.valid && loginForm.get('email')?.touched"
-                >
-                  Por favor, insira um e-mail válido
-                </span>
-              </div>
-              <div class="mb-3">
-                <label
-                  for="passwordInput"
-                  class="form-label description description-second"
-                >
-                  Senha
-                </label>
-                <input
-                  type="password"
-                  class="form-control"
-                  id="passwordInput"
-                  formControlName="password"
-                >
-                <span
-                  *ngIf = "loginForm.get('password')?.errors &&
-                    loginForm.get('password')?.touched &&
-                    ((loginForm.get('password')?.errors)!['required'] ||
-                    (loginForm.get('password')?.errors)!['minlength'])"
-                >
-                  A senha deve conter pelo menos 6 caracteres
-                </span>
-              </div>
-              <button
-                type="submit"
-                [disabled]="!loginForm.valid"
-                class="btn btn-dark"
-              >
-                Entrar
-              </button>
-            </form>
-            <a routerLink="/register">Não tem uma conta? Clique aqui para criar</a>
+    <div class="first-column">
+      <h2 class="title title-primary">Bem-vindo</h2>
+      <p class="description description-primary">
+        Faça seu login e comece a usar!
+      </p>
+    </div>
+
+    <div class="second-column">
+      <div class="card">
+        <div class="text-center">
+          <h1 class="description description-second">Entrar</h1>
+          <h6 class="description description-second">
+            Por favor, insira seu e-mail e senha
+          </h6>
+          <span class="help-block" *ngIf="error">
+            {{ error }}
+          </span>
+        </div>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+          <div class="mb-3">
+            <label
+              for="emailInput"
+              class="form-label description description-second"
+            >
+              E-mail
+            </label>
+            <input
+              type="email"
+              class="form-control description description-second"
+              id="emailInput"
+              formControlName="email"
+            />
+            <span
+              class="help-block description description-second"
+              *ngIf="
+                !loginForm.get('email')?.valid &&
+                loginForm.get('email')?.touched
+              "
+            >
+              Por favor, insira um e-mail válido
+            </span>
           </div>
+          <div class="mb-3">
+            <label
+              for="passwordInput"
+              class="form-label description description-second"
+            >
+              Senha
+            </label>
+            <input
+              type="password"
+              class="form-control"
+              id="passwordInput"
+              formControlName="password"
+            />
+            <span
+              *ngIf="
+                loginForm.get('password')?.errors &&
+                loginForm.get('password')?.touched &&
+                ((loginForm.get('password')?.errors)!['required'] ||
+                  (loginForm.get('password')?.errors)!['minlength'])
+              "
+            >
+              A senha deve conter pelo menos 6 caracteres
+            </span>
+          </div>
+          <button
+            type="submit"
+            [disabled]="!loginForm.valid"
+            class="btn btn-dark"
+          >
+            Entrar
+          </button>
+        </form>
+        <a routerLink="/register">Não tem uma conta? Clique aqui para criar</a>
       </div>
+    </div>
   </div>
- 
 </div>

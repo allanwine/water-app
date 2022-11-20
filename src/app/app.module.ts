@@ -1,9 +1,16 @@
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { FontAwesomeModule, FaIconLibrary  } from '@fortawesome/angular-fontawesome';
+import {
+  FontAwesomeModule,
+  FaIconLibrary,
+} from '@fortawesome/angular-fontawesome';
 
-import { faGear, faGlassWater as faGlassWater, fas } from '@fortawesome/free-solid-svg-icons';
+import {
+  faGear,
+  faGlassWater as faGlassWater,
+  fas,
+} from '@fortawesome/free-solid-svg-icons';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,7 +27,7 @@ import { OptionsModalComponent } from './home/options-modal/options-modal.compon
     RegisterComponent,
     DashboardComponent,
     NavbarComponent,
-    OptionsModalComponent
+    OptionsModalComponent,
   ],
   imports: [
     AppRoutingModule,
@@ -30,7 +37,7 @@ import { OptionsModalComponent } from './home/options-modal/options-modal.compon
     FontAwesomeModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {
   constructor(library: FaIconLibrary) {

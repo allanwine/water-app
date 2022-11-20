@@ -1,123 +1,92 @@
-<!-- <app-navbar></app-navbar>
+<app-navbar></app-navbar>
 
-<div class="container d-flex align-items-center justify-content-center mt-4">
-  <div class="row">
-    <div class="col-md-6">
-      <div class="card">
-        <div class="text-center">
-          <h1>Beba Água!</h1>
-          <div class="settings-row">
-            <h3 class="me-3">Objetivo: {{ goal }} ml</h3>
-            <div class="dropdown">
-              <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                <fa-icon [icon]="['fas', 'gear']"></fa-icon>
-              </button>
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li>
-                  <label for="goalRange" class="form-label">Objetivo: {{ goal }}ml</label>
-                  <input type="range" class="form-range" min="500" max="7000" step="250" id="goalRange" [(ngModel)]="goal" (change)='updateSettings()'>
-                </li>
-                <li>
-                  <label for="cupRange" class="form-label">Número de copos: {{ numberOfCups }}</label>
-                  <input type="range" class="form-range" min="1" max="20" step="1" id="cupRange" [(ngModel)]="numberOfCups" (change)='updateSettings()'>
-                </li>
-              </ul>
-            </div>
-          </div>
+<div class="container">
+  <div class="content first-content">
+    <div class="first-column">
+      <h2 class="title title-primary">Bata sua meta</h2>
 
-          <div class="sugestion">
-            <h6>O objetivo sugerido com base no seu peso é:</h6>
-            <span class="goal-suggestion">{{ goal }} (35ml por kg)</span>
-          </div>
+      <div class="settings-row">
+        <p class="description description-primary">Objetivo: {{ goal }} ml</p>
+        <div class="dropdown">
+          <button
+            class="btn btn-primary dropdown-toggle"
+            type="button"
+            id="dropdownMenuButton1"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <fa-icon [icon]="['fas', 'gear']"></fa-icon>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li>
+              <label for="goalRange" class="form-label"
+                >Objetivo: {{ goal }}ml</label
+              >
+              <input
+                type="range"
+                class="form-range"
+                min="500"
+                max="7000"
+                step="250"
+                id="goalRange"
+                [(ngModel)]="goal"
+                (change)="updateSettings()"
+              />
+            </li>
+            <li>
+              <label for="cupRange" class="form-label"
+                >Número de copos: {{ numberOfCups }}</label
+              >
+              <input
+                type="range"
+                class="form-range"
+                min="1"
+                max="20"
+                step="1"
+                id="cupRange"
+                [(ngModel)]="numberOfCups"
+                (change)="updateSettings()"
+              />
+            </li>
+          </ul>
+        </div>
+      </div>
 
-          <div class="cup">
-            <div *ngIf="percentage < 100" class="remained" id="remained">
-              <span id="liters">{{ remained }} ml</span>
-              <small> Restantes</small>
-            </div>
+      <div class="sugestion">
+        <h6>O objetivo sugerido com base no seu peso é:</h6>
+        <span class="goal-suggestion">{{ goal }} (35ml por kg)</span>
+      </div>
 
-            <div [ngStyle]="{height: percentageHeight}" *ngIf="percentage > 1" class="percentage">
-              {{ percentage }}%
-            </div>
-          </div>
+      <div class="cup">
+        <div *ngIf="percentage < 100" class="remained" id="remained">
+          <span id="liters">{{ remained }} ml</span>
+          <small> Restantes</small>
+        </div>
 
-          <p class="text">Selecione o tamanho do copo consumido para adicionar ao total</p>
+        <div
+          [ngStyle]="{ height: percentageHeight }"
+          *ngIf="percentage > 1"
+          class="percentage"
+        >
+          {{ percentage }}%
+        </div>
+      </div>
+    </div>
 
-          <div class="cups">
-            <div
-              *ngFor="let cup of cups, index as i"
-              class="cup cup-small"
-              (click)="clickCup(i)"
-              [ngClass]="{ full: cup.clicked }"
-            >
-              {{ cup.size }}
-            </div>
-          </div>
+    <div class="second-column">
+      <p class="description description-second">
+        Selecione o tamanho do copo consumido para adicionar ao total
+      </p>
+      <div class="cups">
+        <div
+          *ngFor="let cup of cups; index as i"
+          class="cup cup-small"
+          (click)="clickCup(i)"
+          [ngClass]="{ full: cup.clicked }"
+        >
+          {{ cup.size }}
         </div>
       </div>
     </div>
   </div>
-</div>
-
- -->
-
- <!-- -------------------------------  -->
- <app-navbar></app-navbar>
-
- <div class="container">
-  <div class="content first-content">
-      <div class="first-column">
-          <h2 class="title title-primary">Bata sua meta</h2>
-
-          <div class="settings-row">
-            <p class="description description-primary">Objetivo: {{ goal }} ml</p>
-            <div class="dropdown">
-              <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                <fa-icon [icon]="['fas', 'gear']"></fa-icon>
-              </button>
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li>
-                  <label for="goalRange" class="form-label">Objetivo: {{ goal }}ml</label>
-                  <input type="range" class="form-range" min="500" max="7000" step="250" id="goalRange" [(ngModel)]="goal" (change)='updateSettings()'>
-                </li>
-                <li>
-                  <label for="cupRange" class="form-label">Número de copos: {{ numberOfCups }}</label>
-                  <input type="range" class="form-range" min="1" max="20" step="1" id="cupRange" [(ngModel)]="numberOfCups" (change)='updateSettings()'>
-                </li>
-              </ul>
-            </div>
-          </div>
-                        
-          <div class="sugestion">
-            <h6>O objetivo sugerido com base no seu peso é:</h6>
-            <span class="goal-suggestion">{{ goal }} (35ml por kg)</span>
-          </div>
-
-          <div class="cup">
-            <div *ngIf="percentage < 100" class="remained" id="remained">
-              <span id="liters">{{ remained }} ml</span>
-              <small> Restantes</small>
-            </div>
-
-            <div [ngStyle]="{height: percentageHeight}" *ngIf="percentage > 1" class="percentage">
-              {{ percentage }}%
-            </div>
-          </div>
-      </div>    
-
-      <div class="second-column">
-          <p class="description description-second">Selecione o tamanho do copo consumido para adicionar ao total</p>
-          <div class="cups">
-              <div
-                *ngFor="let cup of cups, index as i"
-                class="cup cup-small"
-                (click)="clickCup(i)"
-                [ngClass]="{ full: cup.clicked }"
-              >
-                {{ cup.size }}
-              </div>
-            </div>
-      </div>
-  </div>
- 
 </div>

@@ -5,11 +5,9 @@ import { AuthService } from 'src/app/core/services/auth.service';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss']
+  styleUrls: ['./dashboard.component.scss'],
 })
-
 export class DashboardComponent implements OnInit {
-
   goal: number = 2000;
   percentage: number = 0;
   remained: number = 2000;
@@ -18,7 +16,7 @@ export class DashboardComponent implements OnInit {
   cups: cup[] = [];
   percentageHeight: string = '0px';
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService) {}
 
   ngOnInit(): void {
     this.remained = this.calculateSuggestion();
@@ -38,8 +36,8 @@ export class DashboardComponent implements OnInit {
     for (let i = 0; i < this.numberOfCups; i++) {
       cups.push({
         id: i,
-        size: Math.round((this.goal / this.numberOfCups)).toString() + 'ml',
-        clicked: false
+        size: Math.round(this.goal / this.numberOfCups).toString() + 'ml',
+        clicked: false,
       });
     }
     return cups;
@@ -61,16 +59,19 @@ export class DashboardComponent implements OnInit {
   }
 
   updatePercentage() {
-    this.percentage = Math.floor(((this.goal - this.remained) / this.goal) * 100);
+    this.percentage = Math.floor(
+      ((this.goal - this.remained) / this.goal) * 100
+    );
   }
 
   updateBigCup() {
-    const filledCups = (this.goal - this.remained) / (this.goal / this.numberOfCups);
+    const filledCups =
+      (this.goal - this.remained) / (this.goal / this.numberOfCups);
     console.log(filledCups);
   }
 
   updatePercentageHeight() {
-    this.percentageHeight = this.fullCups / this.numberOfCups * 330 + 'px';
+    this.percentageHeight = (this.fullCups / this.numberOfCups) * 330 + 'px';
   }
 
   clickCup(id: number) {
